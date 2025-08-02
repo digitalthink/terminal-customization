@@ -14,3 +14,7 @@ rm ~/.poshthemes/themes.zip
 export PATH=$PATH:~/.local/bin/ # adapter le chemin selon où se trouve oh-my-posh
 # Sinon uniquement celle-ci
 eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/hul10.omp.json)"
+
+# edit color folder green instead blue
+nano ~/.bashrc
+LS_COLORS=$LS_COLORS:'di=0;32:' ; export LS_COLORS
