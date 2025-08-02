@@ -1,0 +1,16 @@
+curl -s https://ohmyposh.dev/install.sh | bash -s
+oh-my-posh font install CascadiaMono
+# configurer la police dans les options du terminal
+
+# installer les thèmes
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.json
+rm ~/.poshthemes/themes.zip
+
+# Ajouter dans le fichier ~/.bashrc (ici hul10 représente un des thèmes)
+# Si problème ajouter la ligne suivante : 
+export PATH=$PATH:~/.local/bin/ # adapter le chemin selon où se trouve oh-my-posh
+# Sinon uniquement celle-ci
+eval "$(oh-my-posh --init --shell bash --config ~/.poshthemes/hul10.omp.json)"
