@@ -1,0 +1,21 @@
+winget install JanDeDobbeleer.OhMyPosh --scope user --force
+oh-my-posh font install CascadiaMono
+
+# Puis depuis le terminal : choisir CaskaydiaMono Nerd Font dans :
+# Paramètres -> Powershell -> Apparence -> Type de police
+# Optionnel : Taille de police 11px.
+
+oh-my-posh init powershell --config 'hul10' | Invoke-Expression
+
+# Pour rendre persistant la modification :
+notepad $profile
+
+# /!\ Note si le fichier de profile n'existe pas :
+New-Item -Path $PROFILE -Type File -Force
+
+# Et y mettre la commande suivante :
+oh-my-posh init powershell --config 'hul10' | Invoke-Expression
+Import-Module -Name Terminal-Icons # si souci
+
+# /!\ Si les icônes ne s'affichent pas :
+Install-Module -Name Terminal-Icons -Repository PSGallery
